@@ -1,6 +1,9 @@
 <?php
+
 namespace Befeni\Repositories;
-use Befeni\Entities\ShirtOrder;
+
+use Befeni\Database\IDatabase;
+use Befeni\Entities\IEntity;
 
 class ShirtOrderRepository implements IRepository {
     protected $db;
@@ -9,18 +12,20 @@ class ShirtOrderRepository implements IRepository {
         $this->db = $db;
     }
 
-    public function find(ShirtOrder $shirtOrder)
+    public function find(IEntity $entity)
     {
-        $this->db->find($shirtOrder);
+        $result = $this->db->find($entity);
+        $entity->setFabricId($result['fabric_id']);
+        $entity->setCustomerId($result['customer_id']);
     }
 
-    public function save(ShirtOrder $shirtOrder)
+    public function save(IEntity $entity)
     {
-        $this->db->save($shirtOrder);
+        return $this->db->save($entity);
     }
 
-    public function remove(ShirtOrder $shirtOrder)
+    public function remove(IEntity $entity)
     {
-        $this->db->remove($shirtOrder);
+        return $this->db->remove($entity);
     }
 }

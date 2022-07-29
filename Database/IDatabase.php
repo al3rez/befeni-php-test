@@ -1,11 +1,15 @@
 <?php
-namespace Befeni\Repositories;
+namespace Befeni\Database;
+
 use Befeni\Entities\IEntity;
 
-interface IDatabase {
+interface IDatabase
+{
 
     public function find(IEntity $entity);
+
     public function save(IEntity $entity);
+
     public function remove(IEntity $entity);
 
 }
