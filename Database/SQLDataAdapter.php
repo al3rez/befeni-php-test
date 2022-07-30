@@ -13,12 +13,15 @@ class SQLDataAdapter implements IDataAdapter
 
     public function find(BaseModel $model)
     {
-        return $this->db->run("SELECT * FROM {$model->getTableName()} WHERE id = $model->id")->fetch();
+        $query = "SELECT * FROM {$model->getTableName()} WHERE id = $model->id";
+        return $this->db->run($query)->fetch();
     }
 
     public function save(BaseModel $model)
     {
-
+        $values = rtrim(str_repeat('?,', count($model->getValues())), ',');
+        $query = "INSERT INTO {$model->getTableName()} VALUES ($values)";
+        return $this->db->run($query, $model->getValues());
     }
 
     public function remove(BaseModel $model)

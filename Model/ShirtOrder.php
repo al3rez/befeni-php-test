@@ -3,8 +3,24 @@ namespace Befeni\Model;
 
 class ShirtOrder implements BaseModel
 {
-    public $id = "1";
+    public $id;
     public $customerId;
+
+    /**
+     * @return mixed
+     */
+    public function getCustomerId()
+    {
+        return $this->customerId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFabricId()
+    {
+        return $this->fabricId;
+    }
     public $fabricId;
     public $collarSize;
     public $chestSize;
@@ -16,15 +32,17 @@ class ShirtOrder implements BaseModel
         return "shirt_orders";
     }
 
-    public function getId() {
-        return $this->id;
-    }
-
-    public function setCustomerId($id) {
-        return $this->customerId = $id;
-    }
-
-    public function setFabricId($id) {
-        return $this->fabricId = $id;
+    public function getValues() {
+        return [
+            $this->id,
+            $this->customerId,
+            $this->fabricId,
+            $this->collarSize,
+            $this->chestSize,
+            $this->waistSize,
+            $this->wristSize,
+            date_create()->format('Y-m-d H:i:s'),
+            date_create()->format('Y-m-d H:i:s'),
+        ];
     }
 }
