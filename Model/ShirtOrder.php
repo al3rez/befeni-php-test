@@ -26,6 +26,8 @@ class ShirtOrder implements BaseModel
     public $chestSize;
     public $waistSize;
     public $wristSize;
+    public $createdAt;
+    public $updatedAt;
 
     public function getTableName()
     {

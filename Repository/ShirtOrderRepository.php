@@ -20,6 +20,8 @@ class ShirtOrderRepository implements IRepository {
         $shirtOrder->wristSize = $result['wrist_size'];
         $shirtOrder->collarSize = $result['collar_size'];
         $shirtOrder->chestSize = $result['chest_size'];
+        $shirtOrder->updatedAt = $result['updated_at'];
+        $shirtOrder->createdAt = $result['created_at'];
     }
 
     public function save(BaseModel $shirtOrder)
