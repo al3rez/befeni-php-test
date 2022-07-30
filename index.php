@@ -9,7 +9,7 @@ include_once "./Model/ShirtOrder.php";
 include_once "./Repository/IRepository.php";
 include_once "./Repository/ShirtOrderRepository.php";
 
-use \Befeni\Database\MyISQLPDO;
+use \Befeni\Database\MySQLPDO;
 use \Befeni\Database\SQLDataAdapter;
 use \Befeni\Model\ShirtOrder;
 use \Befeni\Repository\ShirtOrderRepository;
