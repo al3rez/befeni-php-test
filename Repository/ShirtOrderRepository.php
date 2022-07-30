@@ -14,8 +14,12 @@ class ShirtOrderRepository implements IRepository {
     public function find(BaseModel $shirtOrder)
     {
         $result = $this->db->find($shirtOrder);
-        $shirtOrder->setFabricId($result['fabric_id']);
-        $shirtOrder->setCustomerId($result['customer_id']);
+        $shirtOrder->fabricId = $result['fabric_id'];
+        $shirtOrder->customerId = $result['customer_id'];
+        $shirtOrder->waistSize = $result['waist_size'];
+        $shirtOrder->wristSize = $result['wrist_size'];
+        $shirtOrder->collarSize = $result['collar_size'];
+        $shirtOrder->chestSize = $result['chest_size'];
     }
 
     public function save(BaseModel $shirtOrder)

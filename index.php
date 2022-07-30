@@ -16,13 +16,7 @@ use \Befeni\Repository\ShirtOrderRepository;
 
 $pdo = new MySQLPDO("laravel", "root", "");
 $shirtOrder = new ShirtOrder();
-$shirtOrder->id = null;
-$shirtOrder->customerId = 1;
-$shirtOrder->fabricId = 1;
-$shirtOrder->chestSize = 1;
-$shirtOrder->waistSize = 1;
-$shirtOrder->wristSize = 2;
-$shirtOrder->collarSize = 1;
+$shirtOrder->id = 1;
 $shirtOrderRepository = new ShirtOrderRepository(new SQLDataAdapter($pdo));
-$shirtOrderRepository->save($shirtOrder);
-echo $shirtOrder->fabricId;
+$shirtOrderRepository->find($shirtOrder);
+print $shirtOrder->customerId;

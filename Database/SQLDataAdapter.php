@@ -26,6 +26,7 @@ class SQLDataAdapter implements IDataAdapter
 
     public function remove(BaseModel $model)
     {
-
+        $query = "DELETE * FROM {$model->getTableName()} WHERE id = $model->id";
+        return $this->db->run($query)->fetch();
     }
 }
