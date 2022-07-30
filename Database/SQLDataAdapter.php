@@ -6,7 +6,7 @@ use Befeni\Model\BaseModel;
 class SQLDataAdapter implements IDataAdapter
 {
 
-    public function __construct(IPDO $db)
+    public function __construct(ISQLPDO $db)
     {
         $this->db = $db;
     }

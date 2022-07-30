@@ -2,7 +2,7 @@
 
 namespace Befeni\Database;
 
-interface SQLPDO
+interface ISQLPDO
 {
     public function run($sql, $args = NULL);
 }
