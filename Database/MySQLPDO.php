@@ -3,7 +3,7 @@ namespace Befeni\Database;
 
 use PDO;
 
-class MySQLPDO implements IPDO
+class MyISQLPDO implements ISQLPDO
 {
     public $pdo;
 
