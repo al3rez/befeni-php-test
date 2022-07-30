@@ -5,22 +5,6 @@ class ShirtOrder implements BaseModel
 {
     public $id;
     public $customerId;
-
-    /**
-     * @return mixed
-     */
-    public function getCustomerId()
-    {
-        return $this->customerId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFabricId()
-    {
-        return $this->fabricId;
-    }
     public $fabricId;
     public $collarSize;
     public $chestSize;

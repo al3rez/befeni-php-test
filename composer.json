@@ -1,0 +1,13 @@
+{
+    "name": "befeni.de/befeni",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alireza Bashiri",
+            "email": "al3rez@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
