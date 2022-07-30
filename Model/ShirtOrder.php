@@ -1,7 +1,7 @@
 <?php
-namespace Befeni\Entities;
+namespace Befeni\Model;
 
-class ShirtOrder implements IEntity
+class ShirtOrder implements BaseModel
 {
     public $id = "1";
     public $customerId;
@@ -17,15 +17,14 @@ class ShirtOrder implements IEntity
     }
 
     public function getId() {
-      return $this.$id;
+        return $this->id;
     }
 
     public function setCustomerId($id) {
-      return $this->customerId = $id;
+        return $this->customerId = $id;
     }
 
     public function setFabricId($id) {
-      return $this->fabricId = $id;
+        return $this->fabricId = $id;
     }
 }
-

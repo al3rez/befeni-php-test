@@ -1,7 +1,9 @@
 <?php
 namespace Befeni\Database;
 
-class MySQLPDO
+use PDO;
+
+class MySQLPDO implements IPDO
 {
     public $pdo;
 
