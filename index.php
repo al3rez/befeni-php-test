@@ -14,7 +14,7 @@ use \Befeni\Database\SQLDataAdapter;
 use \Befeni\Model\ShirtOrder;
 use \Befeni\Repository\ShirtOrderRepository;
 
-$pdo = new MyISQLPDO("laravel", "root", "");
+$pdo = new MySQLPDO("laravel", "root", "");
 $shirtOrder = new ShirtOrder();
 $shirtOrderRepository = new ShirtOrderRepository(new SQLDataAdapter($pdo));
 $shirtOrderRepository->find($shirtOrder);
