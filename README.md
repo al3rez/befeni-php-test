@@ -1,23 +1,73 @@
 # befeni-repository-pattern-php
 
-
 ## Tests
+
+### Prerequisites
+Before running tests you'd need to have `mysql`, `postgresql` installed on your
+machine, if you're using macOS that'd be simply running `brew install mysql` or
+`brew install postgresql` or if you're willing to step into dark real of Docker you'd just need a `docker-compose.yml`.
+
+After you got MySQL and PostgreSQL setup, you only need to do one thing, now
+tests are not using any ENV variables / .env file so to keep it simple you just
+need to create a database `laravel` without password for MySQL as simpley as
+running the below command:
+
+
+```
+mysql -u root
+CREATE DATABASE laravel;
+```
+
+
+### Migrations
+I left a simple SQL below to run as migration for `ShirtOrder` model which is
+defined as `shirt_orders` table in SQL that you need to run after you got your
+databases setup.
+
+
+MySQL
+```sql
+CREATE TABLE shirt_orders (
+	id integer,
+	fabric_id integer,
+	customer_id integer,
+	waist_size integer,
+	wrist_size integer,
+	chest_size integer,
+	collar_size integer,
+	updated_at datetime,
+	created_at datetime
+)
+```
+
+PostgreSQL
+```sql
+CREATE TABLE shirt_orders (
+	id integer,
+	fabric_id integer,
+	customer_id integer,
+	waist_size integer,
+	wrist_size integer,
+	chest_size integer,
+	collar_size integer,
+	updated_at timestamp,
+	created_at timestamp
+)
+```
+
+
+### Running tests
 ```
 $ ./vendor/bin/phpunit Tests --testdox\
 
 PHPUnit 9.5.21 #StandWithUkraine
 
-SQLData Adapter
- ✔ It supports mysql
- ✔ It supports pgsql
-
 Shirt Order Repository
  ✔ It supports mysql
+ ✔ It supports in memory
+ ✔ It caches
 
-Shirt Order
- ✔ It implements base model
+Time: 00:00.024, Memory: 4.00 MB
 
-Time: 00:00.090, Memory: 4.00 MB
-
-OK (4 tests, 5 assertions)
+OK (3 tests, 3 assertions)
 ```
