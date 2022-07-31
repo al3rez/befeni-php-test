@@ -14,9 +14,19 @@ use \Befeni\Database\SQLDataAdapter;
 use \Befeni\Model\ShirtOrder;
 use \Befeni\Repository\ShirtOrderRepository;
 
+use PHPUnit\Framework\TestCase;
+
+
 $pdo = new MySQLPDO("laravel", "root", "");
 $shirtOrder = new ShirtOrder();
 $shirtOrder->id = 1;
 $shirtOrderRepository = new ShirtOrderRepository(new SQLDataAdapter($pdo));
 $shirtOrderRepository->find($shirtOrder);
-print $shirtOrder->customerId;
+
+final class ShirtOrderTest extends TestCase
+{
+    public function testItImplementsBaseModel(): void
+    {
+	    $this->assertInstanceOf('\Model\BaseModel', new ShirtOrder());
+    }
+}
