@@ -55,6 +55,19 @@ CREATE TABLE shirt_orders (
 )
 ```
 
+### Dependencies
+Here I'm using `composer` to install phpunit for automated tests, so you **must** have `composer` installed on your machine by running `brew install composer` / following the below link instructions.
+https://getcomposer.org/doc/00-intro.md
+
+Then simply run:
+
+```
+$ composer update
+```
+
+
+
+
 
 ### Running tests
 ```
